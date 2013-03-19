@@ -219,6 +219,9 @@ on post-fs-data
     write /sys/devices/system/cpu/cpufreq/intellidemand/sampling_rate 50000
     write /sys/devices/system/cpu/cpufreq/intellidemand/optimal_freq 1188000
 
+    # Voltage control
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
+
 on charger
     # Enable Power modes and set the CPU Freq Sampling rates
     write /sys/module/rpm_resources/enable_low_power/L2_cache 1
